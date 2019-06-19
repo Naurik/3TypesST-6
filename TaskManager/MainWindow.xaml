@@ -1,0 +1,66 @@
+﻿<Window x:Class="TaskManager.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManager"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <TextBlock Name="textBlockHour" Text="Часы" Margin="382,10,363,0" Height="28" VerticalAlignment="Top"/>
+        <TextBlock Name="textBlockMinute" Text="Минуты" Margin="461,10,275,0" Height="28" VerticalAlignment="Top"/>
+        <TextBox Name="textBoxHour" Margin="382,38,351,0" Height="21" VerticalAlignment="Top"></TextBox>
+        <TextBox Name="textBoxMinute" Margin="461,38,272,0" Height="21" VerticalAlignment="Top"></TextBox>
+        <DatePicker Name="datePiker" HorizontalAlignment="Left" Margin="256,14,0,0" VerticalAlignment="Top"/>
+        <Calendar HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <Image Margin="597,10,10,245" Source="images.png"/>
+        <Menu HorizontalAlignment="Left" Height="24" Margin="256,76,0,0" VerticalAlignment="Top" Width="100">
+            <MenuItem Header="Тип" Height="24" Width="100">
+                <MenuItem Header="Скачать файл" Click="ClickDownload"></MenuItem>
+                <MenuItem Header="Переместить в каталог" Click="ClickMoving" ></MenuItem>
+                <MenuItem Header="Отправить email" Click="ClickSend"></MenuItem>
+            </MenuItem>
+        </Menu>
+
+        <Menu HorizontalAlignment="Left" Height="24" Margin="256,126,0,0" VerticalAlignment="Top" Width="100">
+            <MenuItem Header="Периодичность" Height="24" Width="100">
+                <MenuItem Header="Одноразово" Click="ClickOnes"/>
+                <MenuItem Header="Каждый день" Click="ClickEveryDay" />
+                <MenuItem Header="Каждый месяц" Click="ClickEveryMonth"/>
+                <MenuItem Header="Каждый год" Click="ClickEveryYear"/>
+            </MenuItem>
+        </Menu>
+
+        <Separator Margin="0,192,0,201"></Separator>
+        <TextBlock Name="textBlockPeriodOnes" Text="Одноразово" Margin="160,372,524,0" Height="24" VerticalAlignment="Top" Background="Silver"></TextBlock>
+        <TextBlock Name="textBlockPeriodDays" Text="Каждый день" Margin="160,372,524,0" Height="24" VerticalAlignment="Top" Background="Red"></TextBlock>
+        <TextBlock Name="textBlockPeriodMonth" Text="Каждый месяц" Margin="160,372,524,0" Height="24" VerticalAlignment="Top" Background="Green"></TextBlock>
+        <TextBlock Name="textBlockPeriodYear" Text="Каждый год" Margin="160,372,524,0" Height="24" VerticalAlignment="Top" Background="Brown"></TextBlock>
+        <TextBlock Name="textBlockDownload" Text="Введите url" Margin="10,223,703,0" Height="24" VerticalAlignment="Top"></TextBlock>
+        <TextBox Name="textBoxDownload" Margin="10,252,603,0" Height="21" VerticalAlignment="Top"/>
+        <TextBlock Name="textBlockDownloadName" Text="Введите название для сохранения" Margin="10,280,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="193"></TextBlock>
+        <TextBox Name="textBoxDownloadName" Margin="10,309,603,0" Height="21" VerticalAlignment="Top"/>
+        <Button Name="buttonDownload" Content="Скачать" Margin="10,341,703,0" Height="19" VerticalAlignment="Top" Click="ButtonDownloadClick"></Button>
+        <TextBlock Name="textBlockMoveFirst" Text="Введите путь откуда" Margin="225,223,449,0" Height="24" VerticalAlignment="Top"></TextBlock>
+        <TextBox Name="textBoxMoveFirst" Margin="208,252,405,0" Height="21" VerticalAlignment="Top"></TextBox>
+        <TextBlock Name="textBlockMoveSecond" Text="Введите путь куда" Margin="225,280,419,0" Height="24" VerticalAlignment="Top"></TextBlock>
+        <TextBox Name="textBoxMoveSecond" Margin="208,304,405,0" Height="21" VerticalAlignment="Top"></TextBox>
+        <Button Name="buttonMove" Content="Переместить" Margin="208,330,505,0" Height="19" VerticalAlignment="Top" Click="ButtonMoveClick"></Button>
+        <TextBlock Name="textBlockSendFrom" Text="Введите свой email" Margin="430,223,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="117"></TextBlock>
+        <TextBox Name="textBoxSendFrom" Margin="416,252,197,0" Height="21" VerticalAlignment="Top"></TextBox>
+        <TextBlock Name="textBlockSendTo" Text="Введите email для отправки" Margin="433,280,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="162"/>
+        <TextBox Name="textBoxSendTo" Margin="416,304,197,0" Height="21" VerticalAlignment="Top"></TextBox>
+        <TextBlock Name="textBlockSendMessage" Text="Введите текст для отправки" Margin="433,332,197,0" Height="24" VerticalAlignment="Top"/>
+        <TextBox Name="textBoxSendMessage" Margin="416,364,197,0" Height="21" VerticalAlignment="Top"/>
+        <Button Name="buttonSend" Content="Отправить" Margin="416,390,297,0" Height="19" VerticalAlignment="Top" Click="ButtonClickToSend"></Button>
+        <TextBlock Name="textBlockSendLogin" Text="Введите свой логин" Margin="617,223,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="148"/>
+        <TextBox Name="textBoxSendLogin" Margin="603,252,10,0" Height="21" VerticalAlignment="Top"/>
+        <TextBlock Name="textBlockSendPassword" Text="Введите пароль" Margin="620,280,10,0" Height="24" VerticalAlignment="Top"/>
+        <PasswordBox Name="passwordBoxSendPassword" Margin="603,304,10,0" Height="21" VerticalAlignment="Top"/>
+        <TextBlock Name="textBlockData" HorizontalAlignment="Left" Margin="382,76,0,0" VerticalAlignment="Top" Width="74" Height="24" />
+        <TextBlock Name="textBlockTime" HorizontalAlignment="Left" Margin="478,76,0,0" VerticalAlignment="Top" Width="86" Height="24"/>
+
+
+
+    </Grid>
+</Window>
